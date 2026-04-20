@@ -1,0 +1,10 @@
+
+  #!/bin/bash
+  killall "Camera Live" 2>/dev/null
+  killall -9 ptpcamerad mscamerad-xpc 2>/dev/null
+  sleep 2
+  open -a "Camera Live"
+  END=$((SECONDS+4))
+  while [ $SECONDS -lt $END ]; do
+      killall -9 ptpcamerad mscamerad-xpc 2>/dev/null
+  done
